@@ -1,0 +1,144 @@
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname L2R1-CR-1
+!
+!
+!
+!
+ip dhcp excluded-address 10.16.0.1 10.16.0.100
+!
+ip dhcp pool VLAN10-Voice
+ network 10.16.0.0 255.255.255.0
+ default-router 10.16.0.2
+ option 150 ip 10.16.0.2
+!
+!
+!
+ip cef
+ipv6 unicast-routing
+!
+no ipv6 cef
+!
+!
+!
+!
+license udi pid CISCO2811/K9 sn FTX1017GMP4-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface Loopback1
+ ip address 10.16.6.2 255.255.255.240
+!
+interface FastEthernet0/0
+ ip address 192.168.16.2 255.255.255.0
+ duplex auto
+ speed auto
+ ipv6 address FE80::1 link-local
+ ipv6 address 2016:ABCD:1234:1:1::2/64
+ ipv6 enable
+ ipv6 ospf 16 area 0
+!
+interface FastEthernet0/1
+ ip address 10.16.2.1 255.255.255.0
+ ip helper-address 172.18.16.100
+ duplex auto
+ speed auto
+ ipv6 address FE80::1 link-local
+ ipv6 address 2016:ABCD:1234:3:2::1/64
+ ipv6 enable
+ ipv6 ospf 16 area 2
+!
+interface FastEthernet0/1.10
+ encapsulation dot1Q 10
+ ip address 10.16.0.2 255.255.255.0
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router ospf 6
+ router-id 2.2.2.2
+ log-adjacency-changes
+ network 10.16.6.0 0.0.0.15 area 2
+ network 10.16.2.0 0.0.0.255 area 2
+ network 192.168.16.0 0.0.0.255 area 0
+!
+ipv6 router ospf 16
+ router-id 20.20.20.20
+ log-adjacency-changes
+!
+ip classless
+!
+ip flow-export version 9
+!
+ipv6 route 2016:ABCD:1234:2::/64 2016:ABCD:1234:1:1::1
+!
+!
+!
+!
+!
+!
+dial-peer voice 20 voip
+ destination-pattern 1...
+ session target ipv4:192.168.16.1
+!
+dial-peer voice 21 voip
+ destination-pattern 3...
+ session target ipv4:192.168.16.3
+!
+dial-peer voice 22 voip
+ destination-pattern 4...
+ session target ipv4:192.168.16.4
+!
+dial-peer voice 23 voip
+ destination-pattern 5...
+ session target ipv4:192.168.16.5
+!
+telephony-service
+ max-ephones 10
+ max-dn 10
+ ip source-address 10.16.0.2 port 2000
+ auto assign 4 to 6
+ auto assign 1 to 5
+!
+ephone-dn 1
+ number 2111
+!
+ephone 1
+ device-security-mode none
+ mac-address 0060.4767.8D7C
+ type 7960
+ button 1:1
+!
+line con 0
+ login
+!
+line aux 0
+!
+line vty 0 4
+ password group6
+ login
+!
+!
+!
+end
+

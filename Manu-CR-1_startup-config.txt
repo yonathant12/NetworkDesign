@@ -1,0 +1,110 @@
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Manu-CR-1
+!
+!
+!
+!
+ip dhcp excluded-address 10.16.100.1
+!
+ip dhcp pool manufacture
+ network 10.16.100.0 255.255.255.0
+ default-router 10.16.100.1
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+!
+!
+!
+license udi pid CISCO2811/K9 sn FTX101728U4-
+!
+!
+!
+crypto isakmp policy 10
+ encr aes 256
+ authentication pre-share
+ group 5
+!
+crypto isakmp key ToManufacture address 198.16.1.1
+!
+!
+!
+crypto ipsec transform-set ManufactureRouter-TorontoISPGatewayRouter esp-aes 256 esp-sha-hmac
+!
+crypto map IPSEC-MAP 10 ipsec-isakmp 
+ set peer 198.16.1.1
+ set pfs group5
+ set security-association lifetime seconds 86400
+ set transform-set ManufactureRouter-TorontoISPGatewayRouter 
+ match address 100
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ ip address 198.16.3.2 255.255.255.0
+ ip nat outside
+ duplex auto
+ speed auto
+ crypto map IPSEC-MAP
+!
+interface FastEthernet0/1
+ ip address 10.16.100.1 255.255.255.0
+ ip nat inside
+ duplex auto
+ speed auto
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip nat inside source list 101 interface FastEthernet0/0 overload
+ip classless
+ip route 0.0.0.0 0.0.0.0 198.16.3.1 
+!
+ip flow-export version 9
+!
+!
+access-list 100 permit ip 10.16.100.0 0.0.0.255 10.16.0.0 0.0.255.255
+access-list 100 permit ip 10.16.100.0 0.0.0.255 172.18.16.0 0.0.0.255
+access-list 100 permit ip 10.16.100.0 0.0.0.255 192.168.16.0 0.0.0.255
+access-list 101 deny ip 10.16.100.0 0.0.0.255 10.16.0.0 0.0.255.255
+access-list 101 deny ip 10.16.100.0 0.0.0.255 172.18.16.0 0.0.0.255
+access-list 101 deny ip 10.16.100.0 0.0.0.255 192.168.16.0 0.0.0.255
+access-list 101 remark The above deny list is to deny IP packets from using NAT to Toronto as it will be sent via the IPsec tunnel
+access-list 101 permit ip 10.16.100.0 0.0.0.255 any
+access-list 101 remark The above permit list is to NAT all other IP packets to the Internet
+!
+!
+!
+!
+!
+line con 0
+ login
+!
+line aux 0
+!
+line vty 0 4
+ password group6
+ login
+!
+!
+!
+end
+
