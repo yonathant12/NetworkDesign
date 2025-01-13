@@ -12,8 +12,41 @@ Setting up a Windows Server 2019 on VMware Workstation 17 Pro involves creating 
 <h2>Lab walk-through:</h2>
 
 <p align="center">
-Click the "File" option on the top left and select "New Virtual Machine". Choose the Custom option and hit next.<br/>
+Network Topology.<br/>
 <img src="https://i.imgur.com/L7q5mZ5.png" height="60%" width="60%"/>
 <br />
 <br />
+Location 1 Toronto HQ IP Address Table.<br/>
+<img src="https://imgur.com/s52cj71" height="60%" width="60%"/>
+<br />
+<br />
+Location 2 Ottawa IP Address Table.<br/>
+<img src="https://i.imgur.com/L7q5mZ5.png" height="60%" width="60%"/>
+<br />
+<br />
+Location 3 Winnipeg IP Address Table.<br/>
+<img src="https://i.imgur.com/L7q5mZ5.png" height="60%" width="60%"/>
+<br />
+<br />
+Location 4 Montreal IP Address Table.<br/>
+<img src="https://i.imgur.com/L7q5mZ5.png" height="60%" width="60%"/>
+<br />
+<br />
+Location 5 Quebec City IP Address Table.<br/>
+<img src="https://i.imgur.com/L7q5mZ5.png" height="60%" width="60%"/>
+<br />
+<br />
+Manufacture IP Address Table.<br/>
+<img src="https://i.imgur.com/L7q5mZ5.png" height="60%" width="60%"/>
+<br />
+<br />
+
+
+
+
+
+
+
+
+
 </p>
