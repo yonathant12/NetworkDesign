@@ -1,7 +1,7 @@
 <h1>Network Design</h1>
 
-<h2>Description</h2>
-Setting up a Windows Server 2019 on VMware Workstation 17 Pro involves creating a new virtual machine, configuring hardware resources, installing the server OS from an ISO file, and performing initial setup tasks such as installing VMware Tools, assigning a static IP, and renaming the machine.
+<h2>Overview</h2>
+For this project, I designed a small enterprise network infrastructure for a company with five locations. Using Cisco Packet Tracer, I configured and implemented various essential network features, including OSPF, DHCP, VoIP, IPv6, NAT, and Access Control Lists. The design involved allocating IP addresses to multiple network devices across the sites, ensuring seamless connectivity and security.
 <br />
 
 
