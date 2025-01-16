@@ -13,33 +13,75 @@ For this project, I designed a small enterprise network infrastructure for a com
 
 <p align="center">
 Network Topology.<br/>
-<img src="https://i.imgur.com/L7q5mZ5.png" height="60%" width="60%"/>
+<img src="" height="60%" width="60%"/>
 <br />
 <br />
 Location 1 Toronto HQ IP Address Table.<br/>
-<img src="https://imgur.com/s52cj71" height="60%" width="60%"/>
+<img src="" height="60%" width="60%"/>
 <br />
 <br />
 Location 2 Ottawa IP Address Table.<br/>
-<img src="https://i.imgur.com/L7q5mZ5.png" height="60%" width="60%"/>
+<img src="" height="60%" width="60%"/>
 <br />
 <br />
 Location 3 Winnipeg IP Address Table.<br/>
-<img src="https://i.imgur.com/L7q5mZ5.png" height="60%" width="60%"/>
+<img src="" height="60%" width="60%"/>
 <br />
 <br />
 Location 4 Montreal IP Address Table.<br/>
-<img src="https://i.imgur.com/L7q5mZ5.png" height="60%" width="60%"/>
+<img src="" height="60%" width="60%"/>
 <br />
 <br />
 Location 5 Quebec City IP Address Table.<br/>
-<img src="https://i.imgur.com/L7q5mZ5.png" height="60%" width="60%"/>
+<img src="" height="60%" width="60%"/>
 <br />
 <br />
 Manufacture IP Address Table.<br/>
-<img src="https://i.imgur.com/L7q5mZ5.png" height="60%" width="60%"/>
+<img src="" height="60%" width="60%"/>
 <br />
 <br />
+DHCP Server assigned Ip address.<br/>
+<img src="" height="60%" width="60%"/>
+<br />
+<br />
+DHCP pool for all site locations.<br/>
+<img src="" height="60%" width="60%"/>
+<br />
+<br />
+HTTP server assigned Ip address.<br/>
+<img src="" height="60%" width="60%"/>
+<br />
+<br />
+HTTP server files.<br/>
+<img src="" height="60%" width="60%"/>
+<br />
+<br />
+Web page code.<br/>
+<img src="" height="60%" width="60%"/>
+<br />
+<br />
+FTP server assigned Ip address.<br/>
+<img src="" height="60%" width="60%"/>
+<br />
+<br />
+FTP user setup.<br/>
+<img src="" height="60%" width="60%"/>
+<br />
+<br />
+IoT configuration settings.<br/>
+<img src="" height="60%" width="60%"/>
+<br />
+<br />
+IoT monitoring.<br/>
+<img src="" height="60%" width="60%"/>
+<br />
+<br />
+IoT device conditions.<br/>
+<img src="" height="60%" width="60%"/>
+<br />
+<br />
+
+
 
 
 
