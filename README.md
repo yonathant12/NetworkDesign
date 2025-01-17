@@ -11,7 +11,7 @@ For this project, I designed a small enterprise network infrastructure for a com
 
 <h2>Lab walk-through:</h2>
 
-<p align="center">
+<p align="left">
 Network Topology.<br/>
 <img src="https://i.imgur.com/cVIwS5Z.png" height="60%" width="60%"/>
 <br />
